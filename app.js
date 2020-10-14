@@ -20,6 +20,11 @@ const products = [{
     id: 1
 }];
 
+
+app.get('/',(req,res)=> {
+    res.send('Hi im Eliran,<br> Welcome to my API build with express');
+})
+
 app.get('/users', (req, res) => {
     res.status(200).json(users);
 })
