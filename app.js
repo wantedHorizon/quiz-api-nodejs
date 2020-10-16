@@ -47,10 +47,8 @@ app.post('/quiz/create/user', (req, res) => {
         lastname,
         firstname,
         survey,
-        id: users.length + 1
     };
     usersDB.addNewUser(newUser);
-    // users.push(newUser);
     res.status(200).json(newUser);
 
 })
