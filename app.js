@@ -49,7 +49,7 @@ app.post('/quiz/create/user', (req, res) => {
         survey,
     };
     usersDB.addNewUser(newUser);
-    res.status(200).json(newUser);
+    res.status(201).json(newUser);
 
 })
 
@@ -160,6 +160,9 @@ app.get('/users', (req, res) => {
     res.status(200).json(usersData);
 });
 
+app.get('/ranks', (req, res) => {
+    return res.status(200).send.json(ranksDB.getData());
+}
 
 // app.delete('/user', (req, res) => {
 //     if (!req.query || !req.query.id) {
