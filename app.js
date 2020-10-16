@@ -161,8 +161,8 @@ app.get('/users', (req, res) => {
 });
 
 app.get('/ranks', (req, res) => {
-    return res.status(200).send.json(ranksDB.getData());
-}
+    return res.status(200).json(ranksDB.getData());
+});
 
 // app.delete('/user', (req, res) => {
 //     if (!req.query || !req.query.id) {
