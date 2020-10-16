@@ -27,6 +27,10 @@ see live at: https://my-routes-eliran.herokuapp.com/
 - **[GET]  "/users"**
   > get all users data
 
+- **[GET]  "/ranks"**
+  > get all ranks data
+
+
 
 - **[POST]  "/quiz/create/user"**
   
