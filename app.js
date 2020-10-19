@@ -1,11 +1,15 @@
 const express = require('express')
 const bodyParser = require('body-parser');
+const cors = require('cors');
+
 const app = express()
 
 const usersDB = require('./utils/users');
 const ranksDB = require('./utils/ranks');
 
 const port = process.env.PORT || 3030;
+app.use(cors()); 
+
 app.use(bodyParser.urlencoded({
     extended: true
 }));
@@ -155,6 +159,7 @@ app.get('/quiz/:username/rank/:player_name', (req,res) => {
     res.status(200).json(result);
 
 });
+
 app.get('/users', (req, res) => {
     const usersData= usersDB.getData();
     res.status(200).json(usersData);
@@ -163,6 +168,48 @@ app.get('/users', (req, res) => {
 app.get('/ranks', (req, res) => {
     return res.status(200).json(ranksDB.getData());
 });
+
+
+app.get('*', (req, res) => {
+    res.status(404).send("Page not found");
+})
+
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}.`)
+})
+
+
+const validateSurvey = (survey) => {
+    if (survey.length !== QUESTIONS_AMOUNT)
+        return false;
+
+    survey.forEach(element => {
+        if (!element.hasOwnProperty('q') ||
+                !element.hasOwnProperty('answers') ||
+                Object.keys(element).length !== 4 ||
+                isNaN(element.correct)
+            )
+            return false;
+    });
+
+    return true;
+};
+
+const validateAnswers = (answers) => {
+    if(answers.length !== QUESTIONS_AMOUNT){
+        return false;
+    }
+
+    answers.forEach(ans => {
+        
+        if(isNaN(ans) || ans<0 || ans >= QUESTIONS_OPTIONS)
+            return false;
+    
+    
+    });
+
+    return true;
+}
 
 // app.delete('/user', (req, res) => {
 //     if (!req.query || !req.query.id) {
@@ -214,43 +261,3 @@ app.get('/ranks', (req, res) => {
 
 
 
-app.get('*', (req, res) => {
-    res.status(404).send("Page not found");
-})
-
-app.listen(port, () => {
-    console.log(`Server is up on port ${port}.`)
-})
-
-
-const validateSurvey = (survey) => {
-    if (survey.length !== QUESTIONS_AMOUNT)
-        return false;
-
-    survey.forEach(element => {
-        if (!element.hasOwnProperty('q') ||
-                !element.hasOwnProperty('answers') ||
-                Object.keys(element).length !== 4 ||
-                isNaN(element.correct)
-            )
-            return false;
-    });
-
-    return true;
-};
-
-const validateAnswers = (answers) => {
-    if(answers.length !== QUESTIONS_AMOUNT){
-        return false;
-    }
-
-    answers.forEach(ans => {
-        
-        if(isNaN(ans) || ans<0 || ans >= QUESTIONS_OPTIONS)
-            return false;
-    
-    
-    });
-
-    return true;
-}
