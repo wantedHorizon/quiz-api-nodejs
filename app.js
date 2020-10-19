@@ -156,7 +156,23 @@ app.get('/quiz/:username/rank/:player_name', (req,res) => {
         return res.status(400).send(`player_name:"${player_name}" doesn't exist on username:${username}`);
     }
 
-    res.status(200).json(result);
+    res.status(200).json(rankResult);
+
+});
+
+app.get('/quiz/:username/ranks', (req,res) => {
+    const {username} = req.params;
+
+    if(!username ){
+        return res.status(400).send("invalid input");
+    }
+    const rankResult = ranksDB.getRanksByUsername(username);
+    
+    if(!rankResult){
+        return res.status(200).send(`invalid username`);
+    }
+
+    res.status(200).json(rankResult);
 
 });
 

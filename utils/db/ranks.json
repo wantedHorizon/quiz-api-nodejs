@@ -1,1 +1,54 @@
-{"eliran94":[{"username":"eliran94","date":1602863121276,"rank":0.9,"player_name":"test test"},{"username":"eliran94","date":1602863214543,"rank":0.9,"player_name":"test5"},{"username":"eliran94","date":1602863295345,"rank":0.9,"player_name":"test57"},{"username":"eliran94","date":1602863380238,"rank":0.9,"player_name":"test579"}],"eliran95":[{"username":"eliran95","date":1602863579371,"rank":0.9,"player_name":"test579"},{"username":"eliran95","date":1602863638435,"rank":0.9,"player_name":"test5798"},{"username":"eliran95","date":1602863675051,"rank":0.9,"player_name":"test"},{"username":"eliran95","date":1602864054399,"rank":0.9,"player_name":"555asf"}]}
+{
+  "eliran94": [
+    {
+      "username": "eliran94",
+      "date": 1602863121276,
+      "rank": 0.9,
+      "player_name": "test test"
+    },
+    {
+      "username": "eliran94",
+      "date": 1602863214543,
+      "rank": 0.9,
+      "player_name": "test5"
+    },
+    {
+      "username": "eliran94",
+      "date": 1602863295345,
+      "rank": 0.9,
+      "player_name": "test57"
+    },
+    {
+      "username": "eliran94",
+      "date": 1602863380238,
+      "rank": 0.9,
+      "player_name": "test579"
+    }
+  ],
+  "eliran95": [
+    {
+      "username": "eliran95",
+      "date": 1602863579371,
+      "rank": 0.9,
+      "player_name": "test579"
+    },
+    {
+      "username": "eliran95",
+      "date": 1602863638435,
+      "rank": 0.9,
+      "player_name": "test5798"
+    },
+    {
+      "username": "eliran95",
+      "date": 1602863675051,
+      "rank": 0.9,
+      "player_name": "test"
+    },
+    {
+      "username": "eliran95",
+      "date": 1602864054399,
+      "rank": 0.9,
+      "player_name": "555asf"
+    }
+  ]
+}

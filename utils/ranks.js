@@ -20,7 +20,7 @@ const saveData = (data) => {
 
 const getRanksByUsername = (username) => {
     const ranks = getData();
-    if(!ranks){
+    if(!ranks[username]){
         ranks[username] = [];
         saveData(ranks);
     }
